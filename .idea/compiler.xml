@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka-client-one" />
+        <module name="eureka-client-three" />
+        <module name="eureka-client-two" />
+        <module name="eureka-server" />
+        <module name="hystrix-turbine" />
+        <module name="simple-zuul" />
+        <module name="zipkin-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="eureka-client-two-hystrix-turbine" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="eureka-client-one" options="-parameters" />
+      <module name="eureka-client-three" options="-parameters" />
+      <module name="eureka-client-two" options="-parameters" />
+      <module name="eureka-client-two-hystrix-turbine" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="hystrix-turbine" options="-parameters" />
+      <module name="simple-zuul" options="-parameters" />
+      <module name="spring-cloud" options="-parameters" />
+      <module name="zipkin-server" options="-parameters" />
+    </option>
+  </component>
+</project>

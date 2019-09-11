@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.ns</groupId>
+    <artifactId>spring-cloud</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>zipkin-server</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>zipkin-server</name>
+  <description>Demo project for Spring Boot</description>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+    <!--目前，GitHub 上最新 release 版本是 Zipkin 2.12.9
+    从 2.12.6 版本开始有个较大的更新，迁移使用 Armeria HTTP 引擎。
+    从此版本开始，若直接添加依赖的 Spring Boot 应用启动会存在冲突，会报上面的错，
+    降到2.12.3版本就可以正常启动了。-->
+    <dependency>
+      <groupId>io.zipkin.java</groupId>
+      <artifactId>zipkin-server</artifactId>
+      <version>2.12.3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.zipkin.java</groupId>
+      <artifactId>zipkin-autoconfigure-ui</artifactId>
+      <version>2.12.3</version>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
